@@ -27,7 +27,7 @@ while True:
     fgMask = cv.dilate(fgMask, None, iterations=5)
     cnts = cv.findContours(fgMask, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)[0]
     for c in cnts:
-        if cv.contourArea(c) >= 3000 : 
+        if cv.contourArea(c) >= 4000 : 
             x,y,w,h = cv.boundingRect(c)
             cv.rectangle(frame,(x,y),(x+w, y+h),(0,255,0))
             if 390 < (y + h)< 400:
